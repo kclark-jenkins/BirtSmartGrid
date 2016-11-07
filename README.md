@@ -6,20 +6,20 @@ Example usage
 ```
 BirtEngineSmartGrid birt = new BirtEngineSmartGrid();
 
-        Map<String, String> dsProperties1 = new HashMap<String, String>();
-        Map<String, String> dsProperties2 = new HashMap<String, String>();
+        Map<String, String> dsourceProperties = new HashMap<String, String>();
+        Map<String, String> dsetProperties    = new HashMap<String, String>();
         Map<String, Object> tableProperties = new HashMap<String, Object>();
         List<String> tableColumns = new ArrayList<String>();
 
 
-        dsProperties1.put("jdbc", DATASOURCE_JDBC);
-        dsProperties1.put("odaDriverClass", ODA_DRIVER_CLASS);
-        dsProperties1.put("odaURL", ODA_URL);
-        dsProperties1.put("odaUser", ODA_USER);
-        dsProperties1.put("odaPassword", ODA_PASSWORD);
+        dsourceProperties.put("jdbc", DATASOURCE_JDBC);
+        dsourceProperties.put("odaDriverClass", ODA_DRIVER_CLASS);
+        dsourceProperties.put("odaURL", ODA_URL);
+        dsourceProperties.put("odaUser", ODA_USER);
+        dsourceProperties.put("odaPassword", ODA_PASSWORD);
 
-        dsProperties2.put("Data Source Name", DATASOURCE_NAME);
-        dsProperties2.put("query", DATASET_QUERY);
+        dsetProperties.put("Data Source Name", DATASOURCE_NAME);
+        dsetProperties.put("query", DATASET_QUERY);
 
         tableColumns.add("CUSTOMERNAME");
         tableColumns.add("COUNTRY");
@@ -48,8 +48,8 @@ BirtEngineSmartGrid birt = new BirtEngineSmartGrid();
         birt.addGrid(GRID_NAME, GRID_COLS, GRID_ROWS, GRID_WIDTH);
         birt.addGridItem(GRID_NAME, IMAGE_NAME, IMAGE, IMAGE_ROW, IMAGE_CELL, birt.createImage(IMAGE_URI));
         birt.addGridItem(GRID_NAME, LABEL_NAME, LABEL, LABEL_ROW, LABEL_CELL, birt.createLabel(LABEL_TEXT));
-        birt.createDataSource("Data Source", dsProperties1);
-        birt.createDataSet("Data Set", dsProperties2);
+        birt.createDataSource("Data Source", dsourceProperties);
+        birt.createDataSet("Data Set", dsetProperties);
         birt.createTable("myTable", tableProperties);
         birt.saveDesign(REPORT_NAME);
         birt.cleanup();
