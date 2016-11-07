@@ -230,19 +230,6 @@ public class BirtEngineSmartGrid {
         }
     }
 
-    /*
-    public void test() {
-        UserPropertyDefn userProp = new UserPropertyDefn();
-        userProp.setName("smartLayout");
-        userProp.setReturnType(PropertyType.BOOLEAN_TYPE_NAME);
-        table.addUserPropertyDefn(userProp);
-        table.setProperty("smartLayout", "true");
-        table.setProperty("linkedDataModel", "oda-data-source::New Data Model");
-        table.setProperty("refTemplateParameter", "NewTemplateParameterDefinition2");
-
-        sh.add(table);
-    }*/
-
     public Object getSingleElementTracker(String name) {
         return elements.get(name);
     }
