@@ -9,11 +9,25 @@ repositories {
     mavenCentral()
 }
 
+def birtRuntimeGroup   = 'org.eclipse.birt.runtime'
+def birtRuntimeName    = 'org.eclipse.birt.runtime'
+def birtRuntimeVersion = '4.2.0'
+
+def birtOsgiGroup      = 'org.eclipse.birt.runtime'
+def birtOsgiName       = 'org.eclipse.osgi'
+def birtOsgiVersion    = '3.10.2.v20150203-1939'
+
+def log4jGroup         = 'log4j'
+def log4jName          = 'log4j'
+def log4jVersion       = '1.2.17'
+
+def junitGroup         = 'junit'
+def junitName          = 'junit'
+def junitVersion       = '4.11'
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    compile fileTree(dir: 'lib', include: '*.jar')
-    compile group: 'org.eclipse.core', name: 'org.eclipse.core.runtime', version: '3.10.0.v20140318-2214'
-    compile group: 'org.eclipse.birt.runtime', name: 'org.eclipse.osgi', version: '3.10.2.v20150203-1939'
-    compile group: 'org.eclipse.birt.runtime', name: 'org.eclipse.birt.runtime', version: '4.2.0'
-    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    testCompile group: junitGroup,         name: junitName,       version: junitVersion
+    compile     group: birtOsgiGroup,      name: birtOsgiName,    version: birtOsgiVersion
+    compile     group: birtRuntimeGroup,   name: birtRuntimeName, version: birtRuntimeVersion
+    compile     group: log4jGroup,         name: log4jName,       version: log4jVersion
 }
