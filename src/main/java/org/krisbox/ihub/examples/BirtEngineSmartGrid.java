@@ -88,7 +88,7 @@ public class BirtEngineSmartGrid {
     public ImageHandle createImage(String uri) {
         try {
             ImageHandle image = factory.newImage( null );
-            image.setURI( "http://www.eclipse.org/birt/resources/documentation/tutorial/multichip-4.jpg");
+            image.setURI( uri );
             return image;
         }catch(SemanticException ex){
             ex.printStackTrace();
